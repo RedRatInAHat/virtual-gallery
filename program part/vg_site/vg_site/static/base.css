@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/* Basic styles for page */
+
+html {
+  background: #0a0505;
+  height: 100%;
+}
+
+body {
+   background-color: #1a1313;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 800px;
+   min-height: 100%;
+   font-family: Courier, "Courier New", "Lucida Console", Monaco, Arial;
+   font-size: 16px;
+   color: #f5e4d3;
+}
+
+/* Header style */
+
+header > img {
+  display: block;
+  max-width: 800px;
+  max-height: 200px;
+}
+
+/* Links style */
+
+a:link, a:visited {
+  color: #a17254;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #c97238;
+  text-decoration: none;
+}
+
+/* Unordered list style */
+ul { list-style-type: none;}
+
+/* Aside style */
+
+body > aside {
+	width: 160px;
+  float: left;
+  font-size: 18px;
+  position: sticky;
+  top: 0;
+}
+
+nav ul > li a {
+  background-color: #0f0c09;
+  display: block;
+  padding: 10px 0 10px 30px;
+}
+
+nav ul > li a:hover, nav ul > li a:active {
+  background-color: #140c02;
+}
+
+/* Main part common style */
+
+div.main_part {
+  margin-left: 160px;
+  padding: 20px 20px 20px 30px;
+}
+
+div.main_part ul {
+  padding: 5px 0 0 20px;
+}
+
+div.main_part h1 {
+  font-size: 1.2em;
+  padding-bottom: 20px;
+}
+
+div.main_part p {
+  padding-bottom: 15px;
+}
