@@ -6,8 +6,15 @@
 
 {% block content %}
   {% autoescape off %}
-  {{content}}
+    {{content}}
   {% endautoescape %}
+  <ul id="main_page_dialog">
+    {% for page in pages_list %}
+      <li>
+        <a href="{{ page.permalink }}">{{page.main_page_dialog}}</a>
+      </li>
+    {% endfor %}
+  </ul>
 {% endblock content%}
 
 {% block aside %}
