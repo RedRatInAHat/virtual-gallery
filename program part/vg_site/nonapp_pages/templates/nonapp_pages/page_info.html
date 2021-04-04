@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title%}
+
+{% block content %}
+  {% autoescape off %}
+    {{content}}
+  {% endautoescape %}
+{% endblock content%}
+
+{% block aside %}
+  {% for page in pages_list %}
+    <li>
+      <a href="{{ page.permalink }}">{{page.nav_title}}</a>
+    </li>
+  {% endfor %}
+{% endblock aside %}
