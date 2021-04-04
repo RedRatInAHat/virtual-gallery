@@ -11,4 +11,4 @@ def index(request, pagename):
         'content': pg_info.main_text,
         'pages_list': PageInfo.objects.all(),
     }
-    return render(request, 'pages_info/page_info.html', context)
+    return render(request, 'nonapp_pages/page_info.html', context)
