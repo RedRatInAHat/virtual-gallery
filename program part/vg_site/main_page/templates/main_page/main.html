@@ -1,103 +1,19 @@
 {% extends "base.html" %}
 
 {% block title %}
-Welcome!
+  {{title}}
 {% endblock title%}
 
 {% block content %}
-<h1>*Какой-то заколовок*</h1>
-<p>*вставить описание зала*</p>
-<p>*второй абзац*</p>
-<ul>
-  <li><a href="#">*здесь ссылки как в sidebar*</a></li>
-</ul>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p>end</p>
+  {% autoescape off %}
+  {{content}}
+  {% endautoescape %}
 {% endblock content%}
+
+{% block aside %}
+  {% for page in pages_list %}
+    <li>
+      <a href="{{ page.permalink }}">{{page.nav_title}}</a>
+    </li>
+  {% endfor %}
+{% endblock aside %}
