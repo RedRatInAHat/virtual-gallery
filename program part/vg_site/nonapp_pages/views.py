@@ -4,7 +4,7 @@ from pages_info.models import PageInfo
 
 def index(request, pagename):
     pagename = "/" + pagename
-    pg_info = get_object_or_404(PageInfo, pagename)
+    pg_info = get_object_or_404(PageInfo, permalink=pagename)
     context = {
         'title': pg_info.title,
         'nav_title': pg_info.nav_title,
