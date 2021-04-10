@@ -11,6 +11,7 @@ def index(request, pagename):
         'nav_title': pg_info.nav_title,
         'content': pg_info.main_text,
         'pages_list': PageInfo.objects.all(),
+        'years_list': YearsInfo.objects.all(),
     }
     return render(request, 'gallery/main_page.html', context)
 

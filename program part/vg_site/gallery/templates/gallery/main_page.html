@@ -15,5 +15,14 @@
     <li>
       <a href="{{ page.permalink }}">{{page.nav_title}}</a>
     </li>
+    {% if page.title == "Gallery" %}
+    <ul id = 'years_links'>
+      {% for year in years_list %}
+        <li>
+          <a href="{{ page.permalink }}{{year.permalink}}">{{year.title}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
   {% endfor %}
 {% endblock aside %}
