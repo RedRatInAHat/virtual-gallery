@@ -12,4 +12,4 @@ def index(request, pagename):
         'content': pg_info.main_text,
         'pages_list': PageInfo.objects.all(),
     }
-    return render(request, 'gallery/main_page.html', context)
+    return render(request, 'main_page/main.html', context)
