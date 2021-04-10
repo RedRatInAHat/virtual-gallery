@@ -8,15 +8,7 @@
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
-  <ul>
-    {% for year in years_list %}
-      <li>
-        <a href="/gallery{{year.permalink}}">{{year.title}}</a>
-      </li>
-    {% endfor %}
-  </ul>
 {% endblock content%}
-
 
 {% block aside %}
   {% for page in pages_list %}
