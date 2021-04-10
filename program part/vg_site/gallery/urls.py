@@ -1,4 +1,4 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [path('<str:pagename>', views.index, name='home'), ]
+urlpatterns = [path('gallery', views.index, {'pagename': 'gallery'}, name='home'), ]
