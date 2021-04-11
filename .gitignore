@@ -132,4 +132,4 @@ dmypy.json
 # PyCharm
 .idea/
 
-program part/vg_site/uploaded_images/*
+program part/vg_site/media/*
