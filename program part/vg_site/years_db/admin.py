@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import YearsInfo
+from .models import YearsInfo, ThemesInfo
 
 
 class YearsInfoAdmin(admin.ModelAdmin):
@@ -8,4 +8,11 @@ class YearsInfoAdmin(admin.ModelAdmin):
     search_fields = ('title',)
 
 
+class ThemesInfoAdmin(admin.ModelAdmin):
+    list_display = ('title', 'year', 'update_date')
+    ordering = ('year',)
+    search_fields = ('title',)
+
+
 admin.site.register(YearsInfo, YearsInfoAdmin)
+admin.site.register(ThemesInfo, ThemesInfoAdmin)

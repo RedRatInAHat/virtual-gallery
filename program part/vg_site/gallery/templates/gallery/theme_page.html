@@ -8,14 +8,6 @@
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
-  <ul>
-    {% for theme in themes_list %}
-      <li>
-        <a href="{{page.permalink}}{{year.permalink}}{{theme.permalink}}">
-          {{theme.nav_title}}</a>
-      </li>
-    {% endfor %}
-  </ul>
 {% endblock content%}
 
 {% block aside %}
@@ -29,7 +21,7 @@
         <li>
           <a href="{{ page.permalink }}{{year.permalink}}">{{year.title}}</a>
         </li>
-        {% if year.title == title%}
+        {% if year.title == year_title%}
           <ul id = 'themes_list'>
             {% for theme in themes_list %}
             <li>
