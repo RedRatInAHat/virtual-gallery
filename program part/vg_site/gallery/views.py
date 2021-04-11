@@ -42,6 +42,7 @@ def get_theme_info(request, year, theme):
         'content': theme_info.main_text,
         'pages_list': PageInfo.objects.all(),
         'years_list': YearsInfo.objects.all(),
-        'themes_list': ThemesInfo.objects.filter(year=year_title)
+        'themes_list': ThemesInfo.objects.filter(year=year_title),
+        'images': ImagesInfo.objects.filter(year_link=year[1:-1], theme_link=theme),
     }
     return render(request, 'gallery/theme_page.html', context)
