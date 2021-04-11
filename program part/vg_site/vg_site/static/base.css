@@ -61,6 +61,29 @@ nav ul > li a:hover, nav ul > li a:active {
   background-color: #140c02;
 }
 
+/* Sublists style */
+ul > ul > li a {
+  background-color: #3d1e00;
+  font-size: 16px;
+  padding: 5px 0 5px 40px;
+}
+
+nav ul > ul > li a:hover, nav ul > li a:active {
+  background-color: #422100;
+}
+
+/* Subsublists style */
+
+ul > ul > ul > li a {
+  background-color: #4a2400;
+  font-size: 16px;
+  padding: 4px 0 4px 45px;
+}
+
+nav ul > ul > ul > li a:hover, nav ul > li a:active {
+  background-color: #542900;
+}
+
 /* Main part common style */
 
 div.main_part {
