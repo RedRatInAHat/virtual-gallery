@@ -17,10 +17,15 @@
   <br/>
   {%for image in images%}
     <div class="gallery_image">
-      <p class="image_title_gallery">{{image.title}}</p>
-      <p class ="image_date_gallery">{{image.creation_date}}</p>
-      <p class = "image_info_gallery">{{image.description}}</p>
-      <img src="{{image.image_file.url}}" alt="{{image.title}}">
+      <div class="gallery_image_file">
+        <img src="{{image.image_file.url}}" alt="{{image.title}}">
+      </div>
+
+      <div class="gallery_info">
+        <p class="image_title_gallery">{{image.title}}</p>
+        <p class ="image_date_gallery">{{image.creation_date}}</p>
+        <p class = "image_info_gallery">{{image.description}}</p>
+      </div>
     </div>
   {%endfor%}
 {% endblock content%}
