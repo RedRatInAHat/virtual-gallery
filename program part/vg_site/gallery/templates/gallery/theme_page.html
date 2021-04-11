@@ -8,6 +8,21 @@
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
+  <br/>
+  {% if images %}
+    <p> There are some paintings in this hall. </p>
+  {% else %}
+    <p> The hall is empty. </p>
+  {% endif %}
+  <br/>
+  {%for image in images%}
+    <div class="gallery_image">
+      <p class="image_title_gallery">{{image.title}}</p>
+      <p class ="image_date_gallery">{{image.creation_date}}</p>
+      <p class = "image_info_gallery">{{image.description}}</p>
+      <img src="{{image.image_file.url}}" alt="{{image.title}}">
+    </div>
+  {%endfor%}
 {% endblock content%}
 
 {% block aside %}
