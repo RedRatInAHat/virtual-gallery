@@ -28,3 +28,18 @@ def get_year_info(request, year):
         'themes_list': ThemesInfo.objects.filter(year=year_info.title),
     }
     return render(request, 'gallery/year_page.html', context)
+
+
+def get_theme_info(request, year, theme):
+    year = '/' + year + '/'
+    year_title = get_object_or_404(YearsInfo, permalink=year).title
+    theme_info = get_object_or_404(ThemesInfo, permalink=theme, year=year_title)
+    context = {
+        'title': theme_info.title,
+        'year_title': year_title,
+        'content': theme_info.main_text,
+        'pages_list': PageInfo.objects.all(),
+        'years_list': YearsInfo.objects.all(),
+        'themes_list': ThemesInfo.objects.filter(year=year_title)
+    }
+    return render(request, 'gallery/theme_page.html', context)
