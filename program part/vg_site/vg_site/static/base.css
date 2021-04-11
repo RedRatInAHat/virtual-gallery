@@ -92,7 +92,7 @@ div.main_part {
 }
 
 div.main_part ul {
-  padding: 5px 0 0 20px;
+  padding: 5px 0 10px 20px;
 }
 
 div.main_part h1 {
@@ -102,4 +102,23 @@ div.main_part h1 {
 
 div.main_part p {
   padding-bottom: 15px;
+}
+
+/* Gallery images style */
+
+div.gallery_image {
+  display: grid;
+  grid-template-columns: 300px auto;
+  padding: 10px 0 10px 0;
+}
+
+div.gallery_image_file > img {
+  max-width: 300px;
+  max-height: 500px;
+}
+
+div.gallery_image > div.gallery_info > p {
+  margin: 0px;
+  padding: 10px 0 0 20px;
+  font-size: 14px;
 }
