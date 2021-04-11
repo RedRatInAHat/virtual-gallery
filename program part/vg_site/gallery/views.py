@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from pages_info.models import PageInfo
 from years_db.models import YearsInfo, ThemesInfo
+from images.models import ImagesInfo
 
 
 def index(request, pagename):
@@ -26,6 +27,7 @@ def get_year_info(request, year):
         'pages_list': PageInfo.objects.all(),
         'years_list': YearsInfo.objects.all(),
         'themes_list': ThemesInfo.objects.filter(year=year_info.title),
+        'images': ImagesInfo.objects.filter(year_link=year[1:-1], theme_link=''),
     }
     return render(request, 'gallery/year_page.html', context)
 

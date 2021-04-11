@@ -8,6 +8,13 @@
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
+  <br/>
+  {% if themes_list %}
+    <p>There are some doors in this hall. Above every of it you see some
+    table: </p>
+  {% else %}
+    <p>There are no doors in this hall.</p>
+  {% endif %}
   <ul>
     {% for theme in themes_list %}
       <li>
@@ -16,6 +23,19 @@
       </li>
     {% endfor %}
   </ul>
+  {% if images %}
+    <p> There are some paintings in this hall. </p>
+  {% else %}
+    <p> There are no paintings in this hall. </p>
+  {% endif %}
+  {%for image in images%}
+    <div class="gallery_image">
+      <p class="image_title_gallery">{{image.title}}</p>
+      <p class ="image_date_gallery">{{image.creation_date}}</p>
+      <p class = "image_info_gallery">{{image.description}}</p>
+      <img src="{{image.image_file.url}}" alt="{{image.title}}">
+    </div>
+  {%endfor%}
 {% endblock content%}
 
 {% block aside %}
