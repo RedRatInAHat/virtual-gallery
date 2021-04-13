@@ -1,13 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+  <script src="{% static 'modal_image.js' %}"></script>
+{% endblock scripts %}
 
 {% block title %}
   {{title}}
 {% endblock title%}
 
 {% block content %}
+
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
+
   <br/>
   {% if themes_list %}
     <p>There are some doors in this hall. Above every of it you see some
@@ -15,6 +22,7 @@
   {% else %}
     <p>There are no doors in this hall.</p>
   {% endif %}
+
   <ul>
     {% for theme in themes_list %}
       <li>
@@ -23,24 +31,19 @@
       </li>
     {% endfor %}
   </ul>
+
   {% if images %}
     <p> There are some paintings in this hall. </p>
   {% else %}
     <p> There are no paintings in this hall. </p>
   {% endif %}
-  {%for image in images%}
-    <div class="gallery_image">
-      <div class="gallery_image_file">
-        <img src="{{image.image_file.url}}" alt="{{image.title}}">
-      </div>
 
-      <div class="gallery_info">
-        <p class="image_title_gallery">{{image.title}}</p>
-        <p class ="image_date_gallery">{{image.creation_date}}</p>
-        <p class = "image_info_gallery">{{image.description}}</p>
-      </div>
-    </div>
-  {%endfor%}
+  <br/>
+
+  {% include "gallery_images.html" %}
+
+  {% include "modal_image.html" %}
+
 {% endblock content%}
 
 {% block aside %}
