@@ -1,0 +1,17 @@
+<div class="gallery_images">
+  {%for image in images%}
+    <div class="gallery_image">
+      <div class="gallery_image_file">
+        <img src="{{image.image_file.url}}" alt="{{image.title}}"
+        onclick="display_image(this)">
+      </div>
+
+      <div class="gallery_info">
+        <p class="image_title_gallery">{{image.title}}</p>
+        <p class ="image_date_gallery">{{image.creation_date}}</p>
+        <p class = "image_info_gallery">{{image.description}}</p>
+      </div>
+    </div>
+  {%endfor%}
+  <p onclick="display_message()">oh hi mark</p>
+</div>
