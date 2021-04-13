@@ -1,13 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+  <script src="{% static 'modal_image.js' %}"></script>
+{% endblock scripts %}
 
 {% block title %}
   {{title}}
 {% endblock title%}
 
 {% block content %}
+
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
+
   <br/>
   {% if images %}
     <p> There are some paintings in this hall. </p>
@@ -15,19 +22,11 @@
     <p> The hall is empty. </p>
   {% endif %}
   <br/>
-  {%for image in images%}
-    <div class="gallery_image">
-      <div class="gallery_image_file">
-        <img src="{{image.image_file.url}}" alt="{{image.title}}">
-      </div>
 
-      <div class="gallery_info">
-        <p class="image_title_gallery">{{image.title}}</p>
-        <p class ="image_date_gallery">{{image.creation_date}}</p>
-        <p class = "image_info_gallery">{{image.description}}</p>
-      </div>
-    </div>
-  {%endfor%}
+  {% include "gallery_images.html" %}
+
+  {% include "modal_image.html" %}
+
 {% endblock content%}
 
 {% block aside %}

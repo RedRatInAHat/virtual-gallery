@@ -11,6 +11,8 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'styles_reset.css'%}">
     <link rel="stylesheet" href="{% static 'base.css'%}">
+    {% block scripts %}
+    {% endblock scripts %}
   </head>
   <body>
     <header>
