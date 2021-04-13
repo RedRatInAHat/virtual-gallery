@@ -132,7 +132,7 @@ div.image_modal {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
@@ -145,8 +145,7 @@ div.image_modal {
 img.image_modal_file {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  height: 90%;
 }
 
 
