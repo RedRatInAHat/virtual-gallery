@@ -8,15 +8,26 @@
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
+
+  <br/>
   <br>
-  <br>
-  <div class="reviews">
-    <br>
-    {% for review in reviews %}
-      <p class="review_text">{{review.review_text}}</p>
-      <p class="review_name">{{review.name}}</p>
-    {% endfor %}
-  </div>
+
+  {% if reviews %}
+    <div class="reviews">
+      <br/>
+      {% for review in reviews %}
+        <p class="review_text">{{review.review_text}}</p>
+        <p class="review_name">{{review.name}}</p>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>There are no reviews yet.</p>
+  {% endif %}
+
+  <br/>
+
+  <a href="{{permalink}}">Close the book.</a>
+
 {% endblock content%}
 
 
