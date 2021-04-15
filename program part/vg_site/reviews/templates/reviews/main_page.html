@@ -8,16 +8,16 @@
   {% autoescape off %}
     {{content}}
   {% endautoescape %}
-  {% block review_content%}
-    <ul>
-      {% for review_page in reviews_pages_list %}
-        <li>
-          <a href="{{permalink}}{{review_page.permalink}}">
-            {{review_page.nav_title}}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endblock review_content %}
+
+  <ul>
+    {% for review_page in reviews_pages_list %}
+      <li>
+        <a href="{{permalink}}{{review_page.permalink}}">
+          {{review_page.nav_title}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  
 {% endblock content%}
 
 
