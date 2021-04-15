@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title%}
+
+{% block content %}
+  {% autoescape off %}
+    {{content}}
+  {% endautoescape %}
+  <ul>
+    {% for review_page in reviews_pages_list %}
+      <li>
+        <a href="{{permalink}}{{review_page.permalink}}">
+          {{review_page.nav_title}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content%}
+
+
+{% block aside %}
+  {% for page in pages_list %}
+    <li>
+      <a href="{{ page.permalink }}">{{page.nav_title}}</a>
+    </li>
+    {% if page.permalink == permalink %}
+    <ul id = 'reviews_links'>
+      {% for review_page in reviews_pages_list %}
+        <li>
+          <a href="{{permalink}}{{review_page.permalink}}">
+            {{review_page.title}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endfor %}
+{% endblock aside %}

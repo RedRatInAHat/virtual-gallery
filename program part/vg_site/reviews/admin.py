@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Reviews
+from .models import Reviews, ReviewsPages
 
 
 class ReviewsAdmin(admin.ModelAdmin):
@@ -9,3 +9,12 @@ class ReviewsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Reviews, ReviewsAdmin)
+
+
+class ReviewsPagesAdmin(admin.ModelAdmin):
+    list_display = ('title', 'nav_title', 'update_date')
+    ordering = ('pk',)
+    search_fields = ('title', 'nav_title')
+
+
+admin.site.register(ReviewsPages, ReviewsPagesAdmin)
