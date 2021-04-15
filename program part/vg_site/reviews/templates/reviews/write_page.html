@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{title}}
+{% endblock title%}
+
+{% block content %}
+  {% if submitted %}
+    <p class='review_success'>Your review now forever in this book. </p>
+  {% else %}
+    {% autoescape off %}
+      {{content}}
+    {% endautoescape %}
+    <br/>
+    <br>
+    <form action="" enctype="multipart/form-data" method="post" novalidate>
+      <table class='review_input'>
+        {{form.as_table}}
+      </table>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" value="Submit"></td>
+      </tr>
+      {% csrf_token %}
+    </form>
+  {% endif %}
+
+  <br/>
+
+  <a href="{{permalink}}">Close the book.</a>
+
+{% endblock content%}
+
+
+{% block aside %}
+  {% for page in pages_list %}
+    <li>
+      <a href="{{ page.permalink }}">{{page.nav_title}}</a>
+    </li>
+    {% if page.permalink == permalink %}
+    <ul id = 'reviews_links'>
+      {% for review_page in reviews_pages_list %}
+        <li>
+          <a href="{{permalink}}{{review_page.permalink}}">
+            {{review_page.title}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endfor %}
+{% endblock aside %}
