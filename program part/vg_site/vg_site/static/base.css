@@ -168,3 +168,19 @@ div#close_modal {
 div#close_modal:hover {
   color: #c97238;
 }
+
+/* Reviews text style */
+div.review_div {
+  background: #0a0505;
+  margin: 20px 0 20px 0;
+  padding: 30px;
+  border-radius: 25px 25px 25px 0;
+}
+
+div p {
+  font-style: italic;
+}
+
+div p.review_name {
+  padding: 0 0 0 60px;
+}
