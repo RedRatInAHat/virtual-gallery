@@ -16,8 +16,10 @@
     <div class="reviews">
       <br/>
       {% for review in reviews %}
-        <p class="review_text">{{review.review_text}}</p>
-        <p class="review_name">{{review.name}}</p>
+        <div class="review_div">
+          <p class="review_text">{{review.review_text}}</p>
+          <p class="review_name">{{review.name}}</p>
+        </div>
       {% endfor %}
     </div>
   {% else %}
