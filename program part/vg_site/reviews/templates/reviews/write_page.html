@@ -15,12 +15,21 @@
     <br>
     <form action="" enctype="multipart/form-data" method="post" novalidate>
       <table class='review_input'>
-        {{form.as_table}}
+        {% for field in form %}
+          <tr>
+            <td>{{ field.label_tag }}</td>
+            <td class="field_to_fill"> {{ field }}
+              {% if field.errors %}
+                <span class="errortext">{{ field.errors }}</span>
+               {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="submit" value="Submit" id="review_submit"></td>
+        </tr>
       </table>
-      <tr>
-        <td>&nbsp;</td>
-        <td><input type="submit" value="Submit"></td>
-      </tr>
       {% csrf_token %}
     </form>
   {% endif %}

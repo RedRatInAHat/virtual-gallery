@@ -177,10 +177,100 @@ div.review_div {
   border-radius: 25px 25px 25px 0;
 }
 
-div p {
+div.review_div p {
   font-style: italic;
 }
 
-div p.review_name {
+div.review_div p.review_name {
   padding: 0 0 0 60px;
+}
+
+/* Review form */
+
+table.review_input {
+  text-align: left;
+  margin: 30px 0 20px;
+}
+
+table.review_input  label {
+  padding-right: 10px;
+}
+
+table.review_input textarea, table.review_input input {
+  background: #0a0505;
+  border-color: #4a2400;
+  border-style: solid;
+  resize: none;
+  color: #a17254;
+  font-style: italic;
+  padding: 5px 10px;
+}
+
+table.review_input textarea:focus, table.review_input input:focus {
+  outline: none;
+  border-color: #a17254;
+}
+
+table.review_input input#review_submit {
+  background: #4a2400;
+  border: none;
+  padding: 10px 20px;
+  color: #a17254;
+  margin: 10px 0 0 0;
+  font-style: normal;
+}
+
+table.review_input input#review_submit:hover {
+  background: #542900;
+  color: #c97238;
+}
+
+
+/* Error popup style */
+
+.field_to_fill {
+  position: relative;
+  display: inline-block;
+}
+
+
+.field_to_fill .errortext {
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  font-size: 14px;
+  color: #c97238;
+  text-align: center;
+  border-radius: 6px 6px 6px 0;
+  padding: 3px;
+  bottom: 45%;
+  margin-left: 10px;
+}
+
+
+.field_to_fill .errortext::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: -16px;
+  border: 8px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
+}
+
+.errortext {
+  -webkit-animation: fadeIn 0.3s;
+  animation: fadeIn 0.3s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
